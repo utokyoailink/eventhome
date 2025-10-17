@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GPTs Build Sprint Tokyo｜開発者向けイベント</title>
+  <meta name="description" content="GPTsの最新事例・実装ノウハウを1日でキャッチアップ。登壇、ハンズオン、ピッチ、ネットワーキングまでフル装備の開発イベント。">
+  <meta property="og:title" content="GPTs Build Sprint Tokyo｜開発者向けイベント">
+  <meta property="og:description" content="GPTsの最新事例・実装ノウハウを1日でキャッチアップ。登壇、ハンズオン、ピッチ、ネットワーキングまでフル装備の開発イベント。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOUR_GITHUB_ID.github.io/gpts-sprint/">
+  <meta property="og:image" content="https://og-playground.vercel.app/api/og?title=GPTs%20Build%20Sprint%20Tokyo&subtitle=%E9%96%8B%E7%99%BA%E8%80%85%E5%90%91%E3%81%91%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#eef2ff', 100:'#e0e7ff', 200:'#c7d2fe', 300:'#a5b4fc', 400:'#818cf8',
+              500:'#6366f1', 600:'#4f46e5', 700:'#4338ca', 800:'#3730a3', 900:'#312e81'
+            }
+          },
+          boxShadow: {
+            glow: '0 0 40px rgba(99,102,241,0.25)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .grain{background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.05) 1px,transparent 0);background-size:24px 24px}
+    .gradient{background: radial-gradient(1200px 600px at 80% 10%, rgba(99,102,241,.25), transparent),
+                        radial-gradient(800px 400px at 10% 20%, rgba(14,165,233,.2), transparent),
+                        linear-gradient(180deg, #0b1020 0%, #0b1020 60%, #0b1020 100%)}
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 grain">
+  <!-- Nav -->
+  <header class="fixed top-0 inset-x-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-slate-950/60">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#top" class="flex items-center gap-2">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 shadow-glow font-extrabold">G</span>
+          <span class="font-semibold">GPTs Build Sprint</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#about" class="hover:text-brand-300">概要</a>
+          <a href="#agenda" class="hover:text-brand-300">タイムテーブル</a>
+          <a href="#speakers" class="hover:text-brand-300">登壇者</a>
+          <a href="#sponsors" class="hover:text-brand-300">協賛</a>
+          <a href="#faq" class="hover:text-brand-300">FAQ</a>
+          <a href="#entry" class="inline-flex items-center rounded-xl bg-brand-600 px-4 py-2 font-semibold hover:bg-brand-500 shadow-glow">エントリー</a>
+        </nav>
+        <a href="#entry" class="md:hidden inline-flex items-center rounded-lg bg-brand-600 px-3 py-1.5 text-sm font-semibold">参加</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="gradient pt-28 pb-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-brand-300 font-semibold tracking-widest">DEVELOPERS · DESIGNERS · OPERATORS</p>
+          <h1 class="mt-3 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+            Make <span class="text-brand-400">GPTs</span> You Can Ship
+          </h1>
+          <p class="mt-5 text-slate-300 text-lg leading-relaxed">ビジネスで使えるGPTsを、その日中に“動く形”まで。最新ベストプラクティス、失敗談、ピッチ、採用・協賛の出会いまで、1日に凝縮。</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#entry" class="inline-flex items-center rounded-xl bg-brand-600 px-5 py-3 font-semibold hover:bg-brand-500 shadow-glow">今すぐエントリー</a>
+            <a href="#agenda" class="inline-flex items-center rounded-xl ring-1 ring-white/10 px-5 py-3 font-semibold hover:bg-white/10">プログラムを見る</a>
+          </div>
+          <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm text-slate-300">
+            <div class="rounded-xl bg-white/5 p-3"><div class="text-2xl font-bold" id="dday">--</div><div>Days</div></div>
+            <div class="rounded-xl bg-white/5 p-3"><div class="text-2xl font-bold" id="hh">--</div><div>Hours</div></div>
+            <div class="rounded-xl bg-white/5 p-3"><div class="text-2xl font-bold" id="mm">--</div><div>Minutes</div></div>
+            <div class="rounded-xl bg-white/5 p-3"><div class="text-2xl font-bold" id="ss">--</div><div>Seconds</div></div>
+          </div>
+          <p class="mt-3 text-xs text-slate-400">開催予定：<span class="font-medium">2025/11/05 (Wed) 10:00–20:30 JST @ SHIMOKITA COLLEGE</span></p>
+        </div>
+        <div class="relative">
+          <div class="absolute -inset-6 rounded-3xl bg-brand-600/20 blur-2xl"></div>
+          <div class="relative rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl">
+            <div class="aspect-[16/10] rounded-2xl bg-gradient-to-br from-brand-600/30 via-sky-500/20 to-transparent grid place-items-center">
+              <svg width="120" height="120" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="opacity-90">
+                <path d="M12 2l3 7h7l-5.5 4 2 7L12 16 5.5 20l2-7L2 9h7l3-7z" stroke="white" stroke-width="1.2"/>
+              </svg>
+            </div>
+            <ul class="mt-6 space-y-3 text-sm text-slate-300">
+              <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span> 実装者の“現場知”に徹底フォーカス（幻のスライド禁止: 実コード・画面・数値のみ）</li>
+              <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span> ハンズオン：評価・RAG・エージェント・デプロイの4トラック</li>
+              <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span> Demo Pitch：3分×8枠／審査員フィードバック</li>
+              <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span> Recruit & Sponsor：会場内で即面談OK</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-slate-300">
+      <h2 class="text-3xl font-bold">イベント概要</h2>
+      <p class="mt-4 leading-relaxed">生成AIの実運用は、"動くまでが速く"、"使われ続けるまでが難しい"。本イベントは、<span class="text-white font-semibold">ビジネスに刺さるGPTs</span>に必要な要件（タスク設計、データ基盤、評価、セキュリティ、UI/UX、運用体制）を、実装者視点で共有・体験・検証します。</p>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <h3 class="font-semibold text-white">想定参加者</h3>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li>・LLM/GPTsの社内導入を主導するエンジニア/PM/データ担当</li>
+            <li>・学生発プロトタイプを“PoC超え”させたい創業者/研究者</li>
+            <li>・協賛/採用の即戦力探索をしたい企業のご担当者</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <h3 class="font-semibold text-white">到達目標（Day1）</h3>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li>・評価指標とA/B設計が言語化されている</li>
+            <li>・RAG/エージェント構成の“最小実装”が手元で再現できる</li>
+            <li>・守り（安全・セキュリティ）と攻め（価値仮説）の両輪を整理</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agenda -->
+  <section id="agenda" class="py-20 bg-white/5">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold">タイムテーブル</h2>
+      <div class="mt-8 grid gap-6 lg:grid-cols-2">
+        <div class="rounded-2xl border border-white/10 p-6">
+          <h3 class="font-semibold">Main Stage</h3>
+          <ul class="mt-4 space-y-3 text-sm text-slate-300">
+            <li><span class="font-mono text-slate-400">10:00</span> 開場・チェックイン</li>
+            <li><span class="font-mono text-slate-400">10:30</span> Keynote：現場で“使われる”GPTsの条件</li>
+            <li><span class="font-mono text-slate-400">11:30</span> セキュリティ＆ガバナンスの実務</li>
+            <li><span class="font-mono text-slate-400">13:30</span> Demo Pitch（前半）</li>
+            <li><span class="font-mono text-slate-400">16:30</span> Demo Pitch（後半）</li>
+            <li><span class="font-mono text-slate-400">19:00</span> 表彰・ネットワーキング</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-white/10 p-6">
+          <h3 class="font-semibold">Hands-on Tracks</h3>
+          <ul class="mt-4 space-y-3 text-sm text-slate-300">
+            <li><span class="font-semibold text-white">Track A：</span> オフライン評価・自動回帰テスト</li>
+            <li><span class="font-semibold text-white">Track B：</span> 高品質RAG（索引・再ランキング・評価）</li>
+            <li><span class="font-semibold text-white">Track C：</span> エージェント設計とツール実装</li>
+            <li><span class="font-semibold text-white">Track D：</span> デプロイ/観測/コスト最適化</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speakers -->
+  <section id="speakers" class="py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold">登壇者（例）</h2>
+      <p class="mt-2 text-slate-300 text-sm">※仮のプレースホルダー。決定後に差し替えてください。</p>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Speaker Card -->
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <img src="https://picsum.photos/seed/s1/600/400" alt="Speaker" class="rounded-xl aspect-[4/3] object-cover">
+          <h3 class="mt-4 font-semibold">山田 太郎</h3>
+          <p class="text-sm text-slate-300">株式会社Alpha ML 取締役CTO / LLM評価</p>
+        </article>
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <img src="https://picsum.photos/seed/s2/600/400" alt="Speaker" class="rounded-xl aspect-[4/3] object-cover">
+          <h3 class="mt-4 font-semibold">佐藤 花子</h3>
+          <p class="text-sm text-slate-300">Beta Labs リサーチエンジニア / RAG</p>
+        </article>
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <img src="https://picsum.photos/seed/s3/600/400" alt="Speaker" class="rounded-xl aspect-[4/3] object-cover">
+          <h3 class="mt-4 font-semibold">Lee Chen</h3>
+          <p class="text-sm text-slate-300">Gamma AI PM / 運用・観測</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsors -->
+  <section id="sponsors" class="py-16 bg-white/5">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between">
+        <h2 class="text-3xl font-bold">協賛</h2>
+        <a href="#entry" class="text-sm underline decoration-brand-400">協賛資料を請求</a>
+      </div>
+      <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div class="aspect-[3/1] rounded-xl border border-white/10 bg-white/5 grid place-items-center text-slate-400">Logo</div>
+        <div class="aspect-[3/1] rounded-xl border border-white/10 bg-white/5 grid place-items-center text-slate-400">Logo</div>
+        <div class="aspect-[3/1] rounded-xl border border-white/10 bg-white/5 grid place-items-center text-slate-400">Logo</div>
+        <div class="aspect-[3/1] rounded-xl border border-white/10 bg-white/5 grid place-items-center text-slate-400">Logo</div>
+        <div class="aspect-[3/1] rounded-xl border border-white/10 bg-white/5 grid place-items-center text-slate-400">Logo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Entry -->
+  <section id="entry" class="py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold">参加エントリー</h2>
+      <p class="mt-3 text-slate-300">以下のボタンからエントリーフォーム（Googleフォーム等）へ。先着順・選考あり。</p>
+      <div class="mt-8 flex justify-center gap-4">
+        <a href="https://forms.gle/your-form" target="_blank" rel="noopener" class="inline-flex items-center rounded-xl bg-brand-600 px-6 py-3 font-semibold hover:bg-brand-500 shadow-glow">エントリーする</a>
+        <a href="mailto:contact@example.com?subject=GPTs%20Build%20Sprint%20-%20Sponsor" class="inline-flex items-center rounded-xl ring-1 ring-white/10 px-6 py-3 font-semibold hover:bg-white/10">協賛のご相談</a>
+      </div>
+      <p class="mt-4 text-xs text-slate-500">※フォーム未準備の間は<a class="underline" href="mailto:contact@example.com">メール</a>でご連絡ください。</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 bg-white/5">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold">FAQ</h2>
+      <div class="mt-8 grid gap-4">
+        <details class="rounded-xl border border-white/10 bg-white/5 p-5">
+          <summary class="cursor-pointer font-medium">初心者でも参加できますか？</summary>
+          <p class="mt-2 text-slate-300 text-sm">はい。ハンズオンはレベル別に分かれ、テンプレートとサンプルコードを配布します。PCをご持参ください。</p>
+        </details>
+        <details class="rounded-xl border border-white/10 bg-white/5 p-5">
+          <summary class="cursor-pointer font-medium">発表・登壇の募集は？</summary>
+          <p class="mt-2 text-slate-300 text-sm">Demo Pitch（3分）は事前選考制です。エントリーフォームにGitHub/動画リンクをご記載ください。</p>
+        </details>
+        <details class="rounded-xl border border-white/10 bg-white/5 p-5">
+          <summary class="cursor-pointer font-medium">企業の参加メリットは？</summary>
+          <p class="mt-2 text-slate-300 text-sm">即戦力の探索、学生・研究者との共創、PoC実証の場提供など。協賛パッケージには採用面談席・ブース出展が含まれます。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 text-sm text-slate-400">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>© 2025 GPTs Build Sprint Tokyo</p>
+        <div class="flex items-center gap-4">
+          <a class="hover:text-slate-200" href="https://github.com/YOUR_GITHUB_ID/gpts-sprint" target="_blank" rel="noopener">GitHub</a>
+          <a class="hover:text-slate-200" href="#">X</a>
+          <a class="hover:text-slate-200" href="#">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ---- Countdown ----
+    const target = new Date('2025-11-05T10:00:00+09:00').getTime();
+    function tick(){
+      const now = Date.now();
+      let diff = Math.max(0, target - now);
+      const d = Math.floor(diff / (1000*60*60*24)); diff -= d*24*60*60*1000;
+      const h = Math.floor(diff / (1000*60*60)); diff -= h*60*60*1000;
+      const m = Math.floor(diff / (1000*60)); diff -= m*60*1000;
+      const s = Math.floor(diff / 1000);
+      for (const [id,val] of Object.entries({dday:d,hh:h,mm:m,ss:s})){
+        const el = document.getElementById(id);
+        if(el) el.textContent = String(val).padStart(2,'0');
+      }
+    }
+    tick(); setInterval(tick, 1000);
+  </script>
+</body>
+</html>
