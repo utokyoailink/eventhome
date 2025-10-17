@@ -266,6 +266,43 @@ Javaの生みの親であるジェームズ・ゴスリング、HotJavaを作っ
   </footer>
 
   <script>
+    (() => {
+      // 対象：拡大したい画像（既に付けた class=cursor-zoom-in）
+      const SEL = 'img.cursor-zoom-in';
+    
+      // オーバーレイ（全画面）をJSで生成
+      const overlay = document.createElement('div');
+      overlay.style.cssText =
+        'position:fixed;inset:0;background:rgba(0,0,0,.9);' +
+        'display:none;align-items:center;justify-content:center;' +
+        'z-index:1000;padding:16px';
+      const big = document.createElement('img');
+      big.style.cssText =
+        'max-width:95vw;max-height:92vh;object-fit:contain;' +
+        'border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.6)';
+      overlay.appendChild(big);
+      document.body.appendChild(overlay);
+    
+      function open(src){
+        big.src = src;
+        overlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // 背景固定
+      }
+      function close(){
+        overlay.style.display = 'none';
+        big.src = '';
+        document.body.style.overflow = '';
+      }
+    
+      // 画像クリックで拡大
+      document.querySelectorAll(SEL).forEach(img => {
+        img.addEventListener('click', () => open(img.currentSrc || img.src));
+      });
+    
+      // 背景クリック/ESCで閉じる
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    })();
     // ---- Countdown ----
     const target = new Date('2025-11-05T10:00:00+09:00').getTime();
     function tick(){
