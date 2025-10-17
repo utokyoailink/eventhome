@@ -88,10 +88,17 @@
           <div class="absolute -inset-6 rounded-3xl bg-brand-600/20 blur-2xl"></div>
           <div class="relative rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl">
             <div class="aspect-[16/10] rounded-2xl bg-gradient-to-br from-brand-600/30 via-sky-500/20 to-transparent grid place-items-center">
-              <svg width="120" height="120" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="opacity-90">
-                <path d="M12 2l3 7h7l-5.5 4 2 7L12 16 5.5 20l2-7L2 9h7l3-7z" stroke="white" stroke-width="1.2"/>
-              </svg>
+              <img
+                src="./images/main.png"
+                alt="イベントイメージ"
+                loading="lazy"
+                width="800" height="500"
+                class="max-h-full max-w-full object-contain rounded-xl"
+                srcset="./images/your-image@1x.png 800w, ./images/your-image@2x.png 1600w"
+                sizes="(min-width: 1024px) 640px, 90vw"
+              />
             </div>
+
             <ul class="mt-6 space-y-3 text-sm text-slate-300">
               <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span> 実装者の“現場知”に徹底フォーカス（幻のスライド禁止: 実コード・画面・数値のみ）</li>
               <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span> ハンズオン：評価・RAG・エージェント・デプロイの4トラック</li>
