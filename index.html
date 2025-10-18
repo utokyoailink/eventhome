@@ -1,16 +1,15 @@
-```html
 <!doctype html>
 <html lang="ja" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GPTs Build Sprint Tokyo｜開発者向けイベント</title>
-  <meta name="description" content="GPTsの最新事例・実装ノウハウを1日でキャッチアップ。登壇、ハンズオン、ピッチ、ネットワーキングまでフル装備の開発イベント。">
-  <meta property="og:title" content="GPTs Build Sprint Tokyo｜開発者向けイベント">
-  <meta property="og:description" content="GPTsの最新事例・実装ノウハウを1日でキャッチアップ。登壇、ハンズオン、ピッチ、ネットワーキングまでフル装備の開発イベント。">
+  <title>第1回 変革のためのGPTsコンテスト｜参加申込</title>
+  <meta name="description" content="DXHR × 東大AI-LINK 共同開催。11/5(水) NeuroHub(渋谷)で開催。テーマは「外国人・インバウンド」。東大生限定・参加無料(軽食つき)。ペアでGPTsを開発し最優秀賞/協賛企業賞を競うコンテストです。">
+  <meta property="og:title" content="第1回 変革のためのGPTsコンテスト｜参加申込">
+  <meta property="og:description" content="DXHR × 東大AI-LINK 共同開催。テーマは「外国人・インバウンド」。東大生限定・参加無料(軽食つき)。ペアでGPTsを開発し最優秀賞/協賛企業賞を競うコンテストです。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://YOUR_GITHUB_ID.github.io/gpts-sprint/">
-  <meta property="og:image" content="https://og-playground.vercel.app/api/og?title=GPTs%20Build%20Sprint%20Tokyo&subtitle=%E9%96%8B%E7%99%BA%E8%80%85%E5%90%91%E3%81%91%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88">
+  <meta property="og:url" content="https://YOUR_GITHUB_ID.github.io/gpts-contest/">
+  <meta property="og:image" content="https://og-playground.vercel.app/api/og?title=%E7%AC%AC1%E5%9B%9E%20GPTs%20Contest&subtitle=DXHR%20%C3%97%20UTokyo%20AI-LINK">
   <meta name="theme-color" content="#0f172a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,9 +26,7 @@
               500:'#6366f1', 600:'#4f46e5', 700:'#4338ca', 800:'#3730a3', 900:'#312e81'
             }
           },
-          boxShadow: {
-            glow: '0 0 40px rgba(99,102,241,0.25)'
-          }
+          boxShadow: { glow: '0 0 40px rgba(99,102,241,0.25)' }
         }
       }
     }
@@ -48,13 +45,12 @@
       <div class="flex items-center justify-between h-16">
         <a href="#top" class="flex items-center gap-2">
           <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 shadow-glow font-extrabold">G</span>
-          <span class="font-semibold">GPTs Build Sprint</span>
+          <span class="font-semibold">GPTs Contest</span>
         </a>
         <nav class="hidden md:flex items-center gap-6 text-sm">
           <a href="#about" class="hover:text-brand-300">概要</a>
-          <a href="#agenda" class="hover:text-brand-300">タイムテーブル</a>
-          <a href="#speakers" class="hover:text-brand-300">登壇者</a>
-          <a href="#sponsors" class="hover:text-brand-300">協賛</a>
+          <a href="#agenda" class="hover:text-brand-300">進行</a>
+          <a href="#speakers" class="hover:text-brand-300">ゲスト/主催</a>
           <a href="#faq" class="hover:text-brand-300">FAQ</a>
           <a href="#entry" class="inline-flex items-center rounded-xl bg-brand-600 px-4 py-2 font-semibold hover:bg-brand-500 shadow-glow">エントリー</a>
         </nav>
@@ -68,14 +64,23 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-10 items-center">
         <div>
-          <p class="text-brand-300 font-semibold tracking-widest">DEVELOPERS · DESIGNERS · OPERATORS</p>
+          <p class="text-brand-300 font-semibold tracking-widest">DXHR × UTokyo AI-LINK</p>
           <h1 class="mt-3 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-            変革のための<span class="text-brand-400">GPTs</span>コンテスト
+            第1回 <span class="text-brand-400">変革のためのGPTs</span>コンテスト
           </h1>
-          <p class="mt-5 text-slate-300 text-lg leading-relaxed">ビジネス・日常で使えるGPTsを、“動く形”までもっていく。チーム開発、ピッチ、企業の方々との出会いまで、2時間半に凝縮。</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-white/10 px-3 py-1">11/5(水)</span>
+            <span class="rounded-full bg-white/10 px-3 py-1">NeuroHub（渋谷駅徒歩0分）</span>
+            <span class="rounded-full bg-white/10 px-3 py-1">参加無料・軽食つき</span>
+            <span class="rounded-full bg-white/10 px-3 py-1">東大生限定</span>
+          </div>
+          <p class="mt-5 text-slate-300 text-lg leading-relaxed">
+            参加者は当日ペアを組み、提示テーマに沿った<strong>GPTs（カスタムChatGPT）</strong>を開発。
+            最優秀賞と協賛企業賞を競います。初心者歓迎、PC持参。
+          </p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="#entry" class="inline-flex items-center rounded-xl bg-brand-600 px-5 py-3 font-semibold hover:bg-brand-500 shadow-glow">今すぐエントリー</a>
-            <a href="#agenda" class="inline-flex items-center rounded-xl ring-1 ring-white/10 px-5 py-3 font-semibold hover:bg-white/10">プログラムを見る</a>
+            <a href="#about" class="inline-flex items-center rounded-xl ring-1 ring-white/10 px-5 py-3 font-semibold hover:bg-white/10">イベント概要</a>
           </div>
           <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm text-slate-300">
             <div class="rounded-xl bg-white/5 p-3"><div class="text-2xl font-bold" id="dday">--</div><div>Days</div></div>
@@ -83,7 +88,9 @@
             <div class="rounded-xl bg-white/5 p-3"><div class="text-2xl font-bold" id="mm">--</div><div>Minutes</div></div>
             <div class="rounded-xl bg-white/5 p-3"><div class="text-2xl font-bold" id="ss">--</div><div>Seconds</div></div>
           </div>
-          <p class="mt-3 text-xs text-slate-400">開催予定：<span class="font-medium">2025/11/05 (Wed) 19:00–21:30 JST @NeuroHub https://maps.app.goo.gl/4y1ukMdKS1vCuKt99</span></p>
+          <p class="mt-3 text-xs text-slate-400">
+            開催日：<span class="font-medium">2025/11/05 (Wed)</span>　会場：<span class="font-medium">NeuroHub（渋谷）</span>
+          </p>
         </div>
         <div class="relative">
           <div class="absolute -inset-6 rounded-3xl bg-brand-600/20 blur-2xl"></div>
@@ -97,13 +104,11 @@
                 loading="lazy" decoding="async"
               />
             </div>
-
-
             <ul class="mt-6 space-y-3 text-sm text-slate-300">
-              <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span> 実装者の“現場知”に徹底フォーカス（幻のスライド禁止: 実コード・画面・数値のみ）</li>
-              <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span> ハンズオン：評価・RAG・エージェント・デプロイの4トラック</li>
-              <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span> Demo Pitch：3分×8枠／審査員フィードバック</li>
-              <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span> Recruit & Sponsor：会場内で即面談OK</li>
+              <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span> テーマは<strong>「外国人・インバウンド」</strong>領域</li>
+              <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span> 評価基準は<strong>最終的なGPTの性能</strong>（詳細は開催10日前にメール配信）</li>
+              <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span> 当日ペア編成／初心者歓迎・質問対応あり</li>
+              <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span> 参加費無料（軽食つき）／東大生限定</li>
             </ul>
           </div>
         </div>
@@ -115,52 +120,55 @@
   <section id="about" class="py-20">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-slate-300">
       <h2 class="text-3xl font-bold">イベント概要</h2>
-      <p class="mt-4 leading-relaxed">生成AIの実運用は、"動くまでが速く"、"使われ続けるまでが難しい"。本イベントは、<span class="text-white font-semibold">ビジネスに刺さるGPTs</span>に必要な要件（タスク設計、データ基盤、評価、セキュリティ、UI/UX、運用体制）を、実装者視点で共有・体験・検証します。</p>
+      <p class="mt-4 leading-relaxed">
+        本コンテストは、DXHR × 東大AI-LINKの共同開催です。<br>
+        <strong>GPTsとは？</strong> いわゆる「カスタムChatGPT」で、用途に合わせたプロンプトや設定を事前に読み込ませ、特定タスクに特化させたGPTを作成できる機能です（例：作品の写真から正確な情報を返す美術館向けGPTなど）。<br>
+        参加者はペアで、当日提示されるテーマ「外国人・インバウンド」に沿ってGPTsを作成。<strong>最優秀賞</strong>と<strong>協賛企業賞</strong>を争います。
+      </p>
       <div class="mt-8 grid gap-6 sm:grid-cols-2">
         <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h3 class="font-semibold text-white">想定参加者</h3>
+          <h3 class="font-semibold text-white">評価について</h3>
           <ul class="mt-3 space-y-2 text-sm">
-            <li>・LLM/GPTsの社内導入を主導するエンジニア/PM/データ担当</li>
-            <li>・学生発プロトタイプを“PoC超え”させたい創業者/研究者</li>
-            <li>・協賛/採用の即戦力探索をしたい企業のご担当者</li>
+            <li>・最終的にどれだけ<strong>性能の高いGPT</strong>を作れたかを重視</li>
+            <li>・<strong>テーマ/評価基準の詳細</strong>は開催<strong>10日前にメール通知</strong></li>
+            <li>・審査員によるフィードバックあり</li>
           </ul>
         </div>
         <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h3 class="font-semibold text-white">到達目標（Day1）</h3>
+          <h3 class="font-semibold text-white">参加条件・持ち物</h3>
           <ul class="mt-3 space-y-2 text-sm">
-            <li>・評価指標とA/B設計が言語化されている</li>
-            <li>・RAG/エージェント構成の“最小実装”が手元で再現できる</li>
-            <li>・守り（安全・セキュリティ）と攻め（価値仮説）の両輪を整理</li>
+            <li>・<strong>東京大学の学生限定</strong></li>
+            <li>・<strong>参加無料</strong>（軽食つき）</li>
+            <li>・ノートPCをご持参ください</li>
+            <li>・当日ペアを編成します（個人申込OK）</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Agenda -->
+  <!-- Agenda / Flow -->
   <section id="agenda" class="py-20 bg-white/5">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold">タイムテーブル</h2>
+      <h2 class="text-3xl font-bold">当日の進行（予定）</h2>
       <div class="mt-8 grid gap-6 lg:grid-cols-2">
         <div class="rounded-2xl border border-white/10 p-6">
-          <h3 class="font-semibold">Main Stage</h3>
+          <h3 class="font-semibold">主な流れ</h3>
           <ul class="mt-4 space-y-3 text-sm text-slate-300">
-            <li><span class="font-mono text-slate-400">10:00</span> 開場・チェックイン</li>
-            <li><span class="font-mono text-slate-400">10:30</span> Keynote：現場で“使われる”GPTsの条件</li>
-            <li><span class="font-mono text-slate-400">11:30</span> セキュリティ＆ガバナンスの実務</li>
-            <li><span class="font-mono text-slate-400">13:30</span> Demo Pitch（前半）</li>
-            <li><span class="font-mono text-slate-400">16:30</span> Demo Pitch（後半）</li>
-            <li><span class="font-mono text-slate-400">19:00</span> 表彰・ネットワーキング</li>
+            <li>チェックイン／オリエンテーション</li>
+            <li>テーマ発表・評価のポイント共有</li>
+            <li>ゲストによるGPTs活用ミニセッション</li>
+            <li>ペア開発（メンタリング・質問対応あり）</li>
+            <li>発表・審査・表彰</li>
+            <li>ネットワーキング</li>
           </ul>
         </div>
         <div class="rounded-2xl border border-white/10 p-6">
-          <h3 class="font-semibold">Hands-on Tracks</h3>
-          <ul class="mt-4 space-y-3 text-sm text-slate-300">
-            <li><span class="font-semibold text-white">Track A：</span> オフライン評価・自動回帰テスト</li>
-            <li><span class="font-semibold text-white">Track B：</span> 高品質RAG（索引・再ランキング・評価）</li>
-            <li><span class="font-semibold text-white">Track C：</span> エージェント設計とツール実装</li>
-            <li><span class="font-semibold text-white">Track D：</span> デプロイ/観測/コスト最適化</li>
-          </ul>
+          <h3 class="font-semibold">テーマ</h3>
+          <p class="mt-4 text-sm text-slate-300">
+            今回のテーマは<strong>「外国人・インバウンド」</strong>。訪日客や在留外国人の体験価値向上、言語サポート、
+            行政・事業者のオペレーション改善など、実装インパクトのある課題解決を狙います。
+          </p>
         </div>
       </div>
     </div>
@@ -169,54 +177,31 @@
   <!-- Speakers -->
   <section id="speakers" class="py-20">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold">主催者</h2>
-      <p class="mt-2 text-slate-300 text-sm">※仮のプレースホルダー。決定後に差し替えてください。</p>
+      <h2 class="text-3xl font-bold">ゲスト / 主催</h2>
       <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Speaker Card -->
+        <!-- Host: AI-LINK -->
         <article class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <img src="https://utokyoailink.github.io/eventhome/1758464069019.jpg" alt="Speaker" class="rounded-xl aspect-[4/3] object-cover cursor-zoom-in w-full">
-          <h3 class="mt-4 font-semibold">樋野 夏希</h3>
-          <p class="text-sm text-slate-300">東京大学工学部2年 / 東大AI-LINK代表</p>
+          <img src="https://utokyoailink.github.io/eventhome/1758464069019.jpg" alt="東大AI-LINK" class="rounded-xl aspect-[4/3] object-cover cursor-zoom-in w-full">
+          <h3 class="mt-4 font-semibold">東大AI-LINK</h3>
+          <p class="text-sm text-slate-300">東京大学の生成AIコミュニティ／学生主体で学習・実装・共創を推進</p>
         </article>
+        <!-- Host: DXHR -->
         <article class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <img src="https://utokyoailink.github.io/eventhome/received_2295239404249775.png" alt="Speaker" class="rounded-xl aspect-[4/3] object-cover cursor-zoom-in w-full">
-          <h3 class="mt-4 font-semibold">前田 一成</h3>
-          <p class="text-sm text-slate-300">DXHR株式会社 代表取締役 / DXHR株式会社 代表取締役<br>
-デジタルトランスフォーメーション、AIトランスフォーメーションの事業開発と人材育成のプロフェッショナル。大学時代から起業・投資などを始め、これまでデジタル関係、地方創生関係を中心に約70社の事業の立上げ、投資などを行ってきた。<br>
-= 直近5年、AI・デジタルの教育関係 =<br>
-2021年<br>
-サイバーセキュリティ人材・ホワイトハッカーの育成拠点を開設<br>
-2023年<br>
-日本初の生成AI専門の教室(SEC-AI)を開設<br>
-2025年<br>
-AI変革のエンジニアとコンサルタントを育成する拠点(NeuroHub)を開設</p>
+          <img src="https://utokyoailink.github.io/eventhome/received_2295239404249775.png" alt="DXHR株式会社" class="rounded-xl aspect-[4/3] object-cover cursor-zoom-in w-full">
+          <h3 class="mt-4 font-semibold">DXHR株式会社</h3>
+          <p class="text-sm text-slate-300">
+            デジタルトランスフォーメーション/AI人材育成を推進。NeuroHub(渋谷)にて実装拠点を運営。
+          </p>
         </article>
+        <!-- Guest: 木寺 祥友 -->
         <article class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <img src="https://utokyoailink.github.io/eventhome/received_757865640569025.jpeg" alt="Speaker" class="rounded-xl aspect-[4/3] object-cover cursor-zoom-in w-full">
+          <img src="https://utokyoailink.github.io/eventhome/received_757865640569025.jpeg" alt="木寺 祥友" class="rounded-xl aspect-[4/3] object-cover cursor-zoom-in w-full">
           <h3 class="mt-4 font-semibold">木寺 祥友</h3>
-          <p class="text-sm text-slate-300">株式会社エル・カミノ・リアル 代表取締役<br>
-パソコン黎明期よりIT業界へ足を踏み入れ、日本初のJavaプロジェクトにかかわり日本人としてはじめてJavaをプログラムする。<br>
-Javaの生みの親であるジェームズ・ゴスリング、HotJavaを作ったアーサー・バン・ホフなどJava開発者と米国で交流を深め、サン・マイクロシステムズの協力により『Javaを創った人々』（アスキー）を執筆。<br>
-携帯電話にJavaが搭載されることを機に株式会社エル・カミノ・リアルを設立。NTTドコモ504iシリーズのｉアプリ（携帯Java）のプラットフォーム作りに携わる。<br>
-ラスベガスにおいて米国最大の携帯電話コンファレンスCTIAで講演。スマートフォンJavaともいえるアンドロイドの開発にも関わる。</p>
+          <p class="text-sm text-slate-300">
+            株式会社エル・カミノ・リアル 代表取締役。AIコンサルティング領域で多数のGPTsを開発。<br>
+            当日はGPTsの使い方を直接質問できる時間を設け、初心者を強力サポート。
+          </p>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sponsors -->
-  <section id="sponsors" class="py-16 bg-white/5">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="flex items-end justify-between">
-        <h2 class="text-3xl font-bold">協賛</h2>
-        <a href="#entry" class="text-sm underline decoration-brand-400">協賛資料を請求</a>
-      </div>
-      <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-        <div class="aspect-[3/1] rounded-xl border border-white/10 bg-white/5 grid place-items-center text-slate-400">Logo</div>
-        <div class="aspect-[3/1] rounded-xl border border-white/10 bg-white/5 grid place-items-center text-slate-400">Logo</div>
-        <div class="aspect-[3/1] rounded-xl border border-white/10 bg-white/5 grid place-items-center text-slate-400">Logo</div>
-        <div class="aspect-[3/1] rounded-xl border border-white/10 bg-white/5 grid place-items-center text-slate-400">Logo</div>
-        <div class="aspect-[3/1] rounded-xl border border-white/10 bg-white/5 grid place-items-center text-slate-400">Logo</div>
       </div>
     </div>
   </section>
@@ -225,12 +210,19 @@ Javaの生みの親であるジェームズ・ゴスリング、HotJavaを作っ
   <section id="entry" class="py-24">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl font-bold">参加エントリー</h2>
-      <p class="mt-3 text-slate-300">以下のボタンからエントリーフォーム（Googleフォーム等）へ。先着順・選考あり。</p>
+      <p class="mt-3 text-slate-300">
+        下記フォームからお申し込みください。<strong>先着順・必要に応じて選考あり</strong>。<br>
+        東大生限定のため、<strong>ECCSメールアドレス</strong>での回答をお願いします。
+      </p>
       <div class="mt-8 flex justify-center gap-4">
         <a href="https://forms.gle/hU6zPf9xgqHdiu5u5" target="_blank" rel="noopener" class="inline-flex items-center rounded-xl bg-brand-600 px-6 py-3 font-semibold hover:bg-brand-500 shadow-glow">エントリーする</a>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ailink.club.utokyo@gmail.com&su=GPTs%20Build%20Sprint%20-%20Sponsor" target="_blank" rel="noopener" class="inline-flex items-center rounded-xl ring-1 ring-white/10 px-6 py-3 font-semibold hover:bg-white/10">協賛のご相談</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ailink.club.utokyo@gmail.com&su=GPTs%20Contest%20-%20Sponsor" target="_blank" rel="noopener" class="inline-flex items-center rounded-xl ring-1 ring-white/10 px-6 py-3 font-semibold hover:bg-white/10">協賛のご相談</a>
       </div>
-      <p class="mt-4 text-xs text-slate-500">※フォーム未準備の間は<a class="underline" href="https://mail.google.com/mail/?view=cm&fs=1&to=ailink.club.utokyo@gmail.com&su=お問い合わせ">メール</a>でご連絡ください。</p>
+      <p class="mt-4 text-xs text-slate-500">
+        フォーム未公開時は
+        <a class="underline" href="https://mail.google.com/mail/?view=cm&fs=1&to=ailink.club.utokyo@gmail.com&su=%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">メール</a>
+        にてお問い合わせください。
+      </p>
     </div>
   </section>
 
@@ -241,15 +233,21 @@ Javaの生みの親であるジェームズ・ゴスリング、HotJavaを作っ
       <div class="mt-8 grid gap-4">
         <details class="rounded-xl border border-white/10 bg-white/5 p-5">
           <summary class="cursor-pointer font-medium">初心者でも参加できますか？</summary>
-          <p class="mt-2 text-slate-300 text-sm">はい。東大生であればだれでもご参加いただけます。PCを必ずご持参ください。</p>
+          <p class="mt-2 text-slate-300 text-sm">
+            はい。東大生であればどなたでも参加可能です。PCをご持参ください。ゲストによる質問受付もあります。
+          </p>
         </details>
         <details class="rounded-xl border border-white/10 bg-white/5 p-5">
-          <summary class="cursor-pointer font-medium">発表・登壇の募集は？</summary>
-          <p class="mt-2 text-slate-300 text-sm">Demo Pitch（3分）は事前選考制です。エントリーフォームにGitHub/動画リンクをご記載ください。</p>
+          <summary class="cursor-pointer font-medium">参加条件はありますか？</summary>
+          <p class="mt-2 text-slate-300 text-sm">
+            参加は<strong>東京大学の学生に限ります</strong>。参加費は無料（軽食つき）です。
+          </p>
         </details>
         <details class="rounded-xl border border-white/10 bg-white/5 p-5">
-          <summary class="cursor-pointer font-medium">企業の参加メリットは？</summary>
-          <p class="mt-2 text-slate-300 text-sm">即戦力の探索、学生との共創、PoC実証の場提供など。協賛パッケージには採用面談席・ブース出展が含まれます。</p>
+          <summary class="cursor-pointer font-medium">評価やテーマの詳細は？</summary>
+          <p class="mt-2 text-slate-300 text-sm">
+            開催<strong>10日前にメール</strong>で共有します。最終的なGPTの<strong>性能</strong>が主評価軸です。
+          </p>
         </details>
       </div>
     </div>
@@ -259,18 +257,16 @@ Javaの生みの親であるジェームズ・ゴスリング、HotJavaを作っ
   <footer class="py-10 text-sm text-slate-400">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p>© 2025 GPTs Build Sprint Tokyo</p>
-        </div>
+        <p>© 2025 DXHR × UTokyo AI-LINK</p>
+        <p class="text-xs">本ページは参加申込の案内用です。記載内容は変更となる場合があります。</p>
       </div>
     </div>
   </footer>
 
   <script>
+    // 画像拡大ビューア
     (() => {
-      // 対象：拡大したい画像（既に付けた class=cursor-zoom-in）
       const SEL = 'img.cursor-zoom-in';
-    
-      // オーバーレイ（全画面）をJSで生成
       const overlay = document.createElement('div');
       overlay.style.cssText =
         'position:fixed;inset:0;background:rgba(0,0,0,.9);' +
@@ -282,29 +278,15 @@ Javaの生みの親であるジェームズ・ゴスリング、HotJavaを作っ
         'border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.6)';
       overlay.appendChild(big);
       document.body.appendChild(overlay);
-    
-      function open(src){
-        big.src = src;
-        overlay.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // 背景固定
-      }
-      function close(){
-        overlay.style.display = 'none';
-        big.src = '';
-        document.body.style.overflow = '';
-      }
-    
-      // 画像クリックで拡大
-      document.querySelectorAll(SEL).forEach(img => {
-        img.addEventListener('click', () => open(img.currentSrc || img.src));
-      });
-    
-      // 背景クリック/ESCで閉じる
+      function open(src){ big.src = src; overlay.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+      function close(){ overlay.style.display = 'none'; big.src = ''; document.body.style.overflow = ''; }
+      document.querySelectorAll(SEL).forEach(img => img.addEventListener('click', () => open(img.currentSrc || img.src)));
       overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
       document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
     })();
-    // ---- Countdown ----
-    const target = new Date('2025-11-05T10:00:00+09:00').getTime();
+
+    // 開催日カウントダウン（時間未定のため 00:00 に設定）
+    const target = new Date('2025-11-05T00:00:00+09:00').getTime();
     function tick(){
       const now = Date.now();
       let diff = Math.max(0, target - now);
@@ -321,4 +303,3 @@ Javaの生みの親であるジェームズ・ゴスリング、HotJavaを作っ
   </script>
 </body>
 </html>
-```
