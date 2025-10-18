@@ -393,98 +393,53 @@
     setInterval(tick, 1000);
   })();
 
-<script>
-// --- Toast (visible version) ---
-(function injectToastStyles(){
-  if (document.getElementById('toast-kf')) return;
-  const style = document.createElement('style');
-  style.id = 'toast-kf';
-  style.textContent = `
-  @keyframes toast-drop {
-    0% { transform: translate(-50%, -20px); opacity: 0; }
-    100% { transform: translate(-50%, 0); opacity: 1; }
-  }
-  @keyframes toast-progress {
-    from { width: 100%; }
-    to   { width: 0%; }
-  }`;
-  document.head.appendChild(style);
-})();
+  (function () {
+    const btn = document.getElementById('sponsor-copy');
+    if (!btn) return;
 
-function showToast(message, type = 'success', duration = 2200) {
-  // 既存トーストを消して多重表示を防止
-  const old = document.getElementById('toast-banner');
-  if (old) old.remove();
+    const email = 'ailink.club.utokyo@gmail.com';
 
-  const isSuccess = type === 'success';
-  const bg = isSuccess ? '#4f46e5' /* brand-600 */ : '#dc2626' /* red-600 */;
-  const ring = isSuccess ? 'rgba(99,102,241,.35)' : 'rgba(220,38,38,.35)';
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.textContent = message;
+      toast.setAttribute('role', 'status');
+      toast.style.cssText = [
+        'position:fixed','left:50%','bottom:24px','transform:translateX(-50%)',
+        'padding:10px 14px','border-radius:9999px',
+        'background:rgba(15,23,42,.95)','color:#e2e8f0',
+        'font-size:14px','box-shadow:0 10px 30px rgba(0,0,0,.4)',
+        'z-index:1001','opacity:0','transition:opacity .15s ease'
+      ].join(';');
+      document.body.appendChild(toast);
+      requestAnimationFrame(() => { toast.style.opacity = '1'; });
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 200);
+      }, 1800);
+    }
 
-  const wrap = document.createElement('div');
-  wrap.id = 'toast-banner';
-  wrap.setAttribute('role', 'status');
-  wrap.setAttribute('aria-live', 'polite');
-  wrap.style.cssText = [
-    'position:fixed',
-    'left:50%',
-    'top:calc(env(safe-area-inset-top, 0px) + 14px)',
-    'transform:translateX(-50%)',
-    'z-index:2147483647',
-    'background:'+bg,
-    'color:#fff',
-    'padding:14px 18px',
-    'border-radius:14px',
-    'box-shadow:0 20px 50px rgba(0,0,0,.45)',
-    'display:flex',
-    'align-items:center',
-    'gap:10px',
-    'font-weight:600',
-    'font-size:15px',
-    'letter-spacing:.2px',
-    'animation:toast-drop .18s ease-out',
-    'border:1px solid '+ring,
-    'backdrop-filter:saturate(140%) blur(6px)'
-  ].join(';');
+    async function copyEmail() {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(email);
+        } else {
+          // 非HTTPS等のフォールバック
+          const ta = document.createElement('textarea');
+          ta.value = email;
+          ta.style.position = 'fixed';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          ta.remove();
+        }
+        showToast(`メールアドレスをコピーしました：${email}`);
+      } catch (e) {
+        console.error(e);
+        showToast('コピーに失敗しました。長押しや選択でコピーしてください。');
+      }
+    }
 
-  // アイコン
-  const icon = document.createElementNS('http://www.w3.org/2000/svg','svg');
-  icon.setAttribute('width','18'); icon.setAttribute('height','18');
-  icon.setAttribute('viewBox','0 0 24 24'); icon.setAttribute('fill','none');
-  icon.innerHTML = isSuccess
-    ? '<path d="M20 7L9 18l-5-5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>'
-    : '<path d="M12 8v5m0 4h.01M12 2a10 10 0 100 20 10 10 0 000-20z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
-  wrap.appendChild(icon);
-
-  // テキスト
-  const msg = document.createElement('span');
-  msg.textContent = message;
-  wrap.appendChild(msg);
-
-  // 進行バー
-  const barWrap = document.createElement('div');
-  barWrap.style.cssText = [
-    'position:absolute','left:8px','right:8px','bottom:6px',
-    'height:3px','border-radius:9999px','background:rgba(255,255,255,.22)'
-  ].join(';');
-  const bar = document.createElement('div');
-  bar.style.cssText = [
-    'height:100%','border-radius:inherit','background:rgba(255,255,255,.95)',
-    `animation:toast-progress ${duration}ms linear forwards`
-  ].join(';');
-  barWrap.appendChild(bar);
-  wrap.appendChild(barWrap);
-
-  document.body.appendChild(wrap);
-
-  // 小さな触覚（対応端末のみ）
-  if (navigator.vibrate) { try { navigator.vibrate(10); } catch(_){} }
-
-  // 自動クローズ
-  setTimeout(() => {
-    wrap.style.transition = 'opacity .15s ease, transform .15s ease';
-    wrap.style.opacity = '0';
-    wrap.style.transform = 'translate(-50%, -8px)';
-    setTimeout(() => wrap.remove(), 170);
-  }, duration);
-}
+    btn.addEventListener('click', copyEmail);
+  })();
 </script>
