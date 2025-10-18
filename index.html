@@ -126,7 +126,7 @@
               </li>
               <li class="flex items-start gap-2">
                 <span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span>
-                当日ペア編成／初心者歓迎・質問対応あり
+                後日ペア編成／初心者歓迎・質問対応あり
               </li>
               <li class="flex items-start gap-2">
                 <span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span>
@@ -201,7 +201,6 @@
   <section id="speakers" class="py-20">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold">主催者</h2>
-      <p class="mt-2 text-slate-300 text-sm">※仮のプレースホルダー。決定後に差し替えてください。</p>
       <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <!-- Speaker Card -->
         <article class="rounded-2xl border border-white/10 bg-white/5 p-6">
@@ -321,26 +320,70 @@
     </div>
   </footer>
 
-  <script>
-    // 画像拡大ビューア
-    (() => {
-      const SEL = 'img.cursor-zoom-in';
+<script>
+  // 画像拡大ビューア
+  (() => {
+    const SEL = 'img.cursor-zoom-in';
 
-      const overlay = document.createElement('div');
-      overlay.style.cssText =
-        'position:fixed;inset:0;background:rgba(0,0,0,.9);' +
-        'display:none;align-items:center;justify-content:center;' +
-        'z-index:1000;padding:16px';
+    const overlay = document.createElement('div');
+    overlay.style.cssText =
+      'position:fixed;inset:0;background:rgba(0,0,0,.9);' +
+      'display:none;align-items:center;justify-content:center;' +
+      'z-index:1000;padding:16px';
 
-      const big = document.createElement('img');
-      big.style.cssText =
-        'max-width:95vw;max-height:92vh;object-fit:contain;' +
-        'border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.6)';
+    const big = document.createElement('img');
+    big.style.cssText =
+      'max-width:95vw;max-height:92vh;object-fit:contain;' +
+      'border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.6)';
 
-      overlay.appendChild(big);
-      document.body.appendChild(overlay);
+    overlay.appendChild(big);
+    document.body.appendChild(overlay);
 
-      function open(src){
-        big.src = src;
-        overlay.style.display = 'flex';
-        document.bod
+    function open(src){
+      big.src = src;
+      overlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function close(){
+      overlay.style.display = 'none';
+      big.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll(SEL).forEach(img => {
+      img.addEventListener('click', () => open(img.currentSrc || img.src));
+    });
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+  })();
+
+  // 開催日カウントダウン
+  (function(){
+    // 日付はJSTで 2025/11/05 00:00
+    const target = new Date('2025-11-05T00:00:00+09:00').getTime();
+
+    function tick(){
+      const now = Date.now();
+      let diff = Math.max(0, target - now);
+
+      const d = Math.floor(diff / (1000*60*60*24)); diff -= d*24*60*60*1000;
+      const h = Math.floor(diff / (1000*60*60));     diff -= h*60*60*1000;
+      const m = Math.floor(diff / (1000*60));        diff -= m*60*1000;
+      const s = Math.floor(diff / 1000);
+
+      const map = { dday: d, hh: h, mm: m, ss: s };
+      Object.entries(map).forEach(([id, val]) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = String(val).padStart(2, '0');
+      });
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
