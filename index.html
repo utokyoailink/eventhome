@@ -84,6 +84,33 @@
             <a href="#entry" class="inline-flex items-center rounded-xl bg-brand-600 px-5 py-3 font-semibold hover:bg-brand-500 shadow-glow">今すぐエントリー</a>
             <a href="#about" class="inline-flex items-center rounded-xl ring-1 ring-white/10 px-5 py-3 font-semibold hover:bg-white/10">イベント概要</a>
           </div>
+
+          <!-- 開催情報（強調表示） -->
+<div class="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+    <p class="text-base sm:text-lg">
+      <span class="font-bold">開催日時：</span>
+      <span id="event-datetime" class="font-semibold text-white">2025年11月5日(水) 19:00–21:30（JST）</span>
+    </p>
+    <p class="text-base sm:text-lg">
+      <span class="font-bold">会場：</span>
+      <a id="event-venue" href="https://maps.app.goo.gl/4y1ukMdKS1vCuKt99" target="_blank" rel="noopener"
+         class="font-semibold underline decoration-brand-400">
+        NeuroHub（渋谷駅徒歩0分）
+      </a>
+    </p>
+  </div>
+  <div class="mt-3 flex flex-wrap gap-3">
+    <button type="button" id="add-gcal"
+            class="inline-flex items-center rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold hover:bg-brand-500 shadow-glow">
+      Googleカレンダーに追加
+    </button>
+    <a id="download-ics" href="#" download="gpts-contest.ics"
+       class="inline-flex items-center rounded-xl ring-1 ring-white/10 px-4 py-2 text-sm font-semibold hover:bg-white/10">
+      .ics をダウンロード
+    </a>
+  </div>
+</div>
           <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm text-slate-300">
             <div class="rounded-xl bg-white/5 p-3">
               <div class="text-2xl font-bold" id="dday">--</div>
