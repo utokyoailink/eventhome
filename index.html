@@ -11,8 +11,11 @@
   <meta property="og:url" content="https://YOUR_GITHUB_ID.github.io/gpts-contest/">
   <meta property="og:image" content="https://og-playground.vercel.app/api/og?title=%E7%AC%AC1%E5%9B%9E%20GPTs%20Contest&subtitle=DXHR%20%C3%97%20UTokyo%20AI-LINK">
   <meta name="theme-color" content="#0f172a">
+
+  <!-- Favicon（現状の指定を保持） -->
   <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/utokyoailink/eventhome/refs/heads/main/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/utokyoailink/eventhome/refs/heads/main/favicon2.ico">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -39,6 +42,28 @@
                         radial-gradient(800px 400px at 10% 20%, rgba(14,165,233,.2), transparent),
                         linear-gradient(180deg, #0b1020 0%, #0b1020 60%, #0b1020 100%)}
   </style>
+
+  <!-- 構造化データ（開催日時を検索に伝達） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "第1回 変革のためのGPTsコンテスト",
+    "startDate": "2025-11-05T19:00:00+09:00",
+    "endDate": "2025-11-05T21:30:00+09:00",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "NeuroHub（渋谷駅徒歩0分）",
+      "address": "Shibuya, Tokyo, Japan"
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "DXHR × UTokyo AI-LINK"
+    }
+  }
+  </script>
 </head>
 <body class="bg-slate-950 text-slate-100 grain">
   <!-- Nav -->
@@ -86,31 +111,32 @@
           </div>
 
           <!-- 開催情報（強調表示） -->
-<div class="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4">
-  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-    <p class="text-base sm:text-lg">
-      <span class="font-bold">開催日時：</span>
-      <span id="event-datetime" class="font-semibold text-white">2025年11月5日(水) 19:00–21:30（JST）</span>
-    </p>
-    <p class="text-base sm:text-lg">
-      <span class="font-bold">会場：</span>
-      <a id="event-venue" href="https://maps.app.goo.gl/4y1ukMdKS1vCuKt99" target="_blank" rel="noopener"
-         class="font-semibold underline decoration-brand-400">
-        NeuroHub（渋谷駅徒歩0分）
-      </a>
-    </p>
-  </div>
-  <div class="mt-3 flex flex-wrap gap-3">
-    <button type="button" id="add-gcal"
-            class="inline-flex items-center rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold hover:bg-brand-500 shadow-glow">
-      Googleカレンダーに追加
-    </button>
-    <a id="download-ics" href="#" download="gpts-contest.ics"
-       class="inline-flex items-center rounded-xl ring-1 ring-white/10 px-4 py-2 text-sm font-semibold hover:bg-white/10">
-      .ics をダウンロード
-    </a>
-  </div>
-</div>
+          <div class="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <p class="text-base sm:text-lg">
+                <span class="font-bold">開催日時：</span>
+                <span id="event-datetime" class="font-semibold text-white">2025年11月5日(水) 19:00–21:30（JST）</span>
+              </p>
+              <p class="text-base sm:text-lg">
+                <span class="font-bold">会場：</span>
+                <a id="event-venue" href="https://maps.app.goo.gl/4y1ukMdKS1vCuKt99" target="_blank" rel="noopener"
+                  class="font-semibold underline decoration-brand-400">
+                  NeuroHub（渋谷駅徒歩0分）
+                </a>
+              </p>
+            </div>
+            <div class="mt-3 flex flex-wrap gap-3">
+              <button type="button" id="add-gcal"
+                class="inline-flex items-center rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold hover:bg-brand-500 shadow-glow">
+                Googleカレンダーに追加
+              </button>
+              <a id="download-ics" href="#" download="gpts-contest.ics"
+                class="inline-flex items-center rounded-xl ring-1 ring-white/10 px-4 py-2 text-sm font-semibold hover:bg-white/10">
+                .ics をダウンロード
+              </a>
+            </div>
+          </div>
+
           <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm text-slate-300">
             <div class="rounded-xl bg-white/5 p-3">
               <div class="text-2xl font-bold" id="dday">--</div>
@@ -133,6 +159,7 @@
             開催日：<span class="font-medium">2025/11/05 (Wed)</span>　会場：<span class="font-medium"><a href="https://share.google/635DB87ZrTQ2OJn51">NeuroHub（渋谷）</a></span>
           </p>
         </div>
+
         <div class="relative">
           <div class="absolute -inset-6 rounded-3xl bg-brand-600/20 blur-2xl"></div>
           <div class="relative rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl">
@@ -141,7 +168,7 @@
                 src="https://utokyoailink.github.io/eventhome/main.png"
                 alt="イベントイメージ"
                 width="1200" height="675"
-                class="max-w-full h-auto object-contain rounded-xl"
+                class="max-w-full h-auto object-contain rounded-xl cursor-zoom-in"
                 loading="lazy" decoding="async"
               />
             </div>
@@ -165,6 +192,7 @@
             </ul>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -244,7 +272,6 @@
           東大で「社会の役に立つプロダクト開発を手軽にできる団体を作りたい」という思いから、今年春に東大AI-LINKを設立。<br>
           今年6月には友人と共に立ち上げたスタートアップでCTOとして開発に携わり、ディープテック企業でのインターン経験も持つ。<br>
           現在も様々な分野でのAI活用、学生と企業とのつながり作りに取り組んでいる。<br>
-          
           </p>
         </article>
         <article class="rounded-2xl border border-white/10 bg-white/5 p-6">
@@ -316,33 +343,6 @@
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="py-20 bg-white/5">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold">FAQ</h2>
-      <div class="mt-8 grid gap-4">
-        <details class="rounded-xl border border-white/10 bg-white/5 p-5">
-          <summary class="cursor-pointer font-medium">初心者でも参加できますか？</summary>
-          <p class="mt-2 text-slate-300 text-sm">
-            はい。東大生であればどなたでも参加可能です。PCをご持参ください。ゲストによる質問受付もあります。
-          </p>
-        </details>
-        <details class="rounded-xl border border-white/10 bg-white/5 p-5">
-          <summary class="cursor-pointer font-medium">参加条件はありますか？</summary>
-          <p class="mt-2 text-slate-300 text-sm">
-            参加は<strong>東京大学の学生に限ります</strong>。参加費は無料（軽食つき）です。
-          </p>
-        </details>
-        <details class="rounded-xl border border-white/10 bg-white/5 p-5">
-          <summary class="cursor-pointer font-medium">評価やテーマの詳細は？</summary>
-          <p class="mt-2 text-slate-300 text-sm">
-            開催<strong>10日前にメール</strong>で共有します。最終的なGPTの<strong>性能</strong>が主評価軸です。
-          </p>
-        </details>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer class="py-10 text-sm text-slate-400">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -353,120 +353,170 @@
     </div>
   </footer>
 
-<script>
-  // 画像拡大ビューア
-  (() => {
-    const SEL = 'img.cursor-zoom-in';
+  <script>
+    // === イベント基本情報（ここだけ直せば全体に反映） ===
+    const EVENT = {
+      title: '第1回 変革のためのGPTsコンテスト',
+      start: '2025-11-05T19:00:00+09:00',   // 開始（JST）
+      end:   '2025-11-05T21:30:00+09:00',   // 終了（JST）
+      venueName: 'NeuroHub（渋谷駅徒歩0分）',
+      venueUrl: 'https://maps.app.goo.gl/4y1ukMdKS1vCuKt99',
+      locationText: 'NeuroHub, Shibuya, Tokyo, Japan'
+    };
 
-    const overlay = document.createElement('div');
-    overlay.style.cssText =
-      'position:fixed;inset:0;background:rgba(0,0,0,.9);' +
-      'display:none;align-items:center;justify-content:center;' +
-      'z-index:1000;padding:16px';
+    // 表示テキストの生成と差し込み
+    (function renderEventHeader(){
+      const wd = ['日','月','火','水','木','金','土'];
+      const s = new Date(EVENT.start);
+      const e = new Date(EVENT.end);
+      const pad = n => String(n).padStart(2,'0');
+      const text = `${s.getFullYear()}年${s.getMonth()+1}月${s.getDate()}日(${wd[s.getDay()]}) `
+                  + `${pad(s.getHours())}:${pad(s.getMinutes())}–${pad(e.getHours())}:${pad(e.getMinutes())}（JST）`;
+      const dt = document.getElementById('event-datetime');
+      if (dt) dt.textContent = text;
+      const v = document.getElementById('event-venue');
+      if (v) { v.textContent = EVENT.venueName; v.href = EVENT.venueUrl; }
+    })();
 
-    const big = document.createElement('img');
-    big.style.cssText =
-      'max-width:95vw;max-height:92vh;object-fit:contain;' +
-      'border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.6)';
+    // 画像拡大ビューア
+    (() => {
+      const SEL = 'img.cursor-zoom-in';
+      const overlay = document.createElement('div');
+      overlay.style.cssText =
+        'position:fixed;inset:0;background:rgba(0,0,0,.9);' +
+        'display:none;align-items:center;justify-content:center;' +
+        'z-index:1000;padding:16px';
+      const big = document.createElement('img');
+      big.style.cssText =
+        'max-width:95vw;max-height:92vh;object-fit:contain;' +
+        'border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.6)';
+      overlay.appendChild(big);
+      document.body.appendChild(overlay);
+      function open(src){ big.src = src; overlay.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+      function close(){ overlay.style.display = 'none'; big.src = ''; document.body.style.overflow = ''; }
+      document.querySelectorAll(SEL).forEach(img => img.addEventListener('click', () => open(img.currentSrc || img.src)));
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    })();
 
-    overlay.appendChild(big);
-    document.body.appendChild(overlay);
-
-    function open(src){
-      big.src = src;
-      overlay.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-    function close(){
-      overlay.style.display = 'none';
-      big.src = '';
-      document.body.style.overflow = '';
-    }
-
-    document.querySelectorAll(SEL).forEach(img => {
-      img.addEventListener('click', () => open(img.currentSrc || img.src));
-    });
-
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) close();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') close();
-    });
-  })();
-
-  // 開催日カウントダウン
-  (function(){
-    // 日付はJSTで 2025/11/05 00:00
-    const target = new Date('2025-11-05T00:00:00+09:00').getTime();
-
-    function tick(){
-      const now = Date.now();
-      let diff = Math.max(0, target - now);
-
-      const d = Math.floor(diff / (1000*60*60*24)); diff -= d*24*60*60*1000;
-      const h = Math.floor(diff / (1000*60*60));     diff -= h*60*60*1000;
-      const m = Math.floor(diff / (1000*60));        diff -= m*60*1000;
-      const s = Math.floor(diff / 1000);
-
-      const map = { dday: d, hh: h, mm: m, ss: s };
-      Object.entries(map).forEach(([id, val]) => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = String(val).padStart(2, '0');
-      });
-    }
-
-    tick();
-    setInterval(tick, 1000);
-  })();
-
-  (function () {
-    const btn = document.getElementById('sponsor-copy');
-    if (!btn) return;
-
-    const email = 'ailink.club.utokyo@gmail.com';
-
-    function showToast(message) {
-      const toast = document.createElement('div');
-      toast.textContent = message;
-      toast.setAttribute('role', 'status');
-      toast.style.cssText = [
-        'position:fixed','left:50%','bottom:24px','transform:translateX(-50%)',
-        'padding:10px 14px','border-radius:9999px',
-        'background:rgba(15,23,42,.95)','color:#e2e8f0',
-        'font-size:14px','box-shadow:0 10px 30px rgba(0,0,0,.4)',
-        'z-index:1001','opacity:0','transition:opacity .15s ease'
-      ].join(';');
-      document.body.appendChild(toast);
-      requestAnimationFrame(() => { toast.style.opacity = '1'; });
-      setTimeout(() => {
-        toast.style.opacity = '0';
-        setTimeout(() => toast.remove(), 200);
-      }, 1800);
-    }
-
-    async function copyEmail() {
-      try {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(email);
-        } else {
-          // 非HTTPS等のフォールバック
-          const ta = document.createElement('textarea');
-          ta.value = email;
-          ta.style.position = 'fixed';
-          ta.style.left = '-9999px';
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          ta.remove();
-        }
-        showToast(`メールアドレスをコピーしました：${email}`);
-      } catch (e) {
-        console.error(e);
-        showToast('コピーに失敗しました。長押しや選択でコピーしてください。');
+    // 開催日カウントダウン（EVENT.start に連動）
+    (function(){
+      const target = new Date(EVENT.start).getTime();
+      function tick(){
+        const now = Date.now();
+        let diff = Math.max(0, target - now);
+        const d = Math.floor(diff / (1000*60*60*24)); diff -= d*24*60*60*1000;
+        const h = Math.floor(diff / (1000*60*60));     diff -= h*60*60*1000;
+        const m = Math.floor(diff / (1000*60));        diff -= m*60*1000;
+        const s = Math.floor(diff / 1000);
+        const map = { dday: d, hh: h, mm: m, ss: s };
+        Object.entries(map).forEach(([id, val]) => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = String(val).padStart(2, '0');
+        });
       }
+      tick(); setInterval(tick, 1000);
+    })();
+
+    // --- 目立つトースト（成功/失敗） ---
+    (function injectToastStyles(){
+      if (document.getElementById('toast-kf')) return;
+      const style = document.createElement('style');
+      style.id = 'toast-kf';
+      style.textContent = `
+      @keyframes toast-drop { 0% { transform: translate(-50%, -20px); opacity: 0; } 100% { transform: translate(-50%, 0); opacity: 1; } }
+      @keyframes toast-progress { from { width: 100%; } to { width: 0%; } }`;
+      document.head.appendChild(style);
+    })();
+    function showToast(message, type = 'success', duration = 2200) {
+      const old = document.getElementById('toast-banner'); if (old) old.remove();
+      const isSuccess = type === 'success';
+      const bg = isSuccess ? '#4f46e5' : '#dc2626';
+      const ring = isSuccess ? 'rgba(99,102,241,.35)' : 'rgba(220,38,38,.35)';
+      const wrap = document.createElement('div');
+      wrap.id = 'toast-banner';
+      wrap.setAttribute('role', 'status');
+      wrap.style.cssText = [
+        'position:fixed','left:50%','top:calc(env(safe-area-inset-top, 0px) + 14px)','transform:translateX(-50%)',
+        'z-index:2147483647','background:'+bg,'color:#fff','padding:14px 18px','border-radius:14px',
+        'box-shadow:0 20px 50px rgba(0,0,0,.45)','display:flex','align-items:center','gap:10px',
+        'font-weight:600','font-size:15px','letter-spacing:.2px','animation:toast-drop .18s ease-out',
+        'border:1px solid '+ring,'backdrop-filter:saturate(140%) blur(6px)'
+      ].join(';');
+      const icon = document.createElementNS('http://www.w3.org/2000/svg','svg');
+      icon.setAttribute('width','18'); icon.setAttribute('height','18'); icon.setAttribute('viewBox','0 0 24 24'); icon.setAttribute('fill','none');
+      icon.innerHTML = isSuccess
+        ? '<path d="M20 7L9 18l-5-5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>'
+        : '<path d="M12 8v5m0 4h.01M12 2a10 10 0 100 20 10 10 0 000-20z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+      const msg = document.createElement('span'); msg.textContent = message;
+      const barWrap = document.createElement('div'); barWrap.style.cssText = ['position:absolute','left:8px','right:8px','bottom:6px','height:3px','border-radius:9999px','background:rgba(255,255,255,.22)'].join(';');
+      const bar = document.createElement('div'); bar.style.cssText = ['height:100%','border-radius:inherit','background:rgba(255,255,255,.95)',`animation:toast-progress ${duration}ms linear forwards`].join(';');
+      barWrap.appendChild(bar);
+      wrap.append(icon, msg, barWrap);
+      document.body.appendChild(wrap);
+      if (navigator.vibrate) { try { navigator.vibrate(10); } catch(_){} }
+      setTimeout(() => { wrap.style.transition = 'opacity .15s ease, transform .15s ease'; wrap.style.opacity = '0'; wrap.style.transform = 'translate(-50%, -8px)'; setTimeout(() => wrap.remove(), 170); }, duration);
+      wrap.addEventListener('click', () => { wrap.remove(); });
     }
 
-    btn.addEventListener('click', copyEmail);
-  })();
-</script>
+    // 協賛メールアドレス コピー機能
+    (function () {
+      const btn = document.getElementById('sponsor-copy'); if (!btn) return;
+      const email = 'ailink.club.utokyo@gmail.com';
+      async function copyEmail() {
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(email);
+          } else {
+            const ta = document.createElement('textarea'); ta.value = email; ta.style.position = 'fixed'; ta.style.left = '-9999px';
+            document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+          }
+          showToast(`メールアドレスをコピーしました：${email}`, 'success');
+        } catch (e) {
+          console.error(e);
+          showToast('コピーに失敗しました。長押しや選択でコピーしてください。', 'error');
+        }
+      }
+      btn.addEventListener('click', copyEmail);
+    })();
+
+    // Googleカレンダー追加 & ICS ダウンロード
+    function toGCal(dt){ return new Date(dt).toISOString().replace(/[-:]/g,'').split('.')[0] + 'Z'; }
+    function escapeRFC5545(str){ return String(str).replace(/([,;])/g,'\\$1').replace(/\n/g,'\\n'); }
+    (function wireCalendarButtons(){
+      const btn = document.getElementById('add-gcal');
+      if (btn) {
+        btn.addEventListener('click', () => {
+          const dates = `${toGCal(EVENT.start)}/${toGCal(EVENT.end)}`;
+          const url = new URL('https://calendar.google.com/calendar/render');
+          url.searchParams.set('action', 'TEMPLATE');
+          url.searchParams.set('text', EVENT.title);
+          url.searchParams.set('dates', dates);
+          url.searchParams.set('location', EVENT.locationText);
+          window.open(url.toString(), '_blank', 'noopener');
+        });
+      }
+      const a = document.getElementById('download-ics');
+      if (a) {
+        const dtstamp = new Date().toISOString().replace(/[-:]/g,'').split('.')[0] + 'Z';
+        const ics =
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//GPTs Contest//JP
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:${(self.crypto && crypto.randomUUID) ? crypto.randomUUID() : ('id-'+Date.now())}@gpts-contest
+DTSTAMP:${dtstamp}
+DTSTART:${toGCal(EVENT.start)}
+DTEND:${toGCal(EVENT.end)}
+SUMMARY:${escapeRFC5545(EVENT.title)}
+LOCATION:${escapeRFC5545(EVENT.locationText)}
+END:VEVENT
+END:VCALENDAR`;
+        const blob = new Blob([ics], { type: 'text/calendar' });
+        a.href = URL.createObjectURL(blob);
+      }
+    })();
+  </script>
+</body>
+</html>
